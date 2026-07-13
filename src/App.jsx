@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ChampionsTable from "./components/ChampionsTable";
 import Clima from "./components/Clima";
+import Indicadores from "./components/Indicadores";
 import Bitacora from "./components/Bitacora";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Hero />
         <ChampionsTable />
         <Clima />
+        <Indicadores />
         <Bitacora />
       </main>
     </>
