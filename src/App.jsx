@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ChampionsTable from "./components/ChampionsTable";
-import Form from "./components/Form";
+import Bitacora from "./components/Bitacora";
 
 function App() {
   // Estado del tema: 'light' por defecto (mismo estado inicial que el proyecto original)
@@ -27,7 +27,7 @@ function App() {
       <main className="main-container">
         <Hero />
         <ChampionsTable />
-        <Form />
+        <Bitacora />
       </main>
     </>
   );

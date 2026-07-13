@@ -28,7 +28,7 @@ function Form() {
       </div>
 
       <div className="form-container">
-        <form id="subscribeForm" noValidate>
+        <form noValidate>
           <div className="form-group">
             <label htmlFor="nombre">Nombre completo</label>
             <input
@@ -80,7 +80,7 @@ function Form() {
             <label htmlFor="terminos">Acepto los términos y condiciones de uso</label>
           </div>
 
-          <button type="submit" id="submitBtn" className="submit-btn" disabled>Suscribirse al boletín</button>
+          <button type="submit" className="submit-btn" disabled>Suscribirse al boletín</button>
         </form>
       </div>
     </section>
