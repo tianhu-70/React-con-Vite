@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ChampionsTable from "./components/ChampionsTable";
+import Clima from "./components/Clima";
 import Bitacora from "./components/Bitacora";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <main className="main-container">
         <Hero />
         <ChampionsTable />
+        <Clima />
         <Bitacora />
       </main>
     </>
