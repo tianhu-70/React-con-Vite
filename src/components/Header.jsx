@@ -1,6 +1,6 @@
 import logo from '../assets/logo.png';
 
-function Header() {
+function Header({ theme, toggleTheme }) {
   return (
     <header className="topbar">
       <div className="topbar-content">
@@ -18,7 +18,13 @@ function Header() {
           {/* Saludo dinámico */}
           <span id="greetingMessage" className="greeting-msg"></span>
           {/* Botón Tema */}
-          <button id="themeToggle" className="theme-toggle">🌙 Oscuro</button>
+          <button
+            id="themeToggle"
+            className="theme-toggle"
+            onClick={toggleTheme}
+          >
+            {theme === "dark" ? "☀️ Claro" : "🌙 Oscuro"}
+          </button>
           <input type="text" placeholder="Buscar selección, mundial, jugador..." />
         </div>
       </div>

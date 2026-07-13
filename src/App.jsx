@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -5,9 +6,26 @@ import ChampionsTable from "./components/ChampionsTable";
 import Form from "./components/Form";
 
 function App() {
+  // Estado del tema: 'light' por defecto (mismo estado inicial que el proyecto original)
+  const [theme, setTheme] = useState("light");
+
+  // Alterna entre tema claro y oscuro
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
+  // Aplica o quita la clase 'dark-mode' del body cuando cambia el tema
+  useEffect(() => {
+    if (theme === "dark") {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  }, [theme]);
+
   return (
     <>
-      <Header />
+      <Header theme={theme} toggleTheme={toggleTheme} />
       <Navbar />
 
       <main className="main-container">
