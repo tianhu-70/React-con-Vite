@@ -22,10 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.aider*
-
-#Aider
-.aider*
-.aider.tags.cache.v4
-.aider.chat.history.md
-.aider.input.history

@@ -6,7 +6,7 @@ function Header() {
       <div className="topbar-content">
         <div className="topbar-left">
           <div className="logo">
-            <img src={logo} alt="Todo Mundiales" onError={(e) => { e.target.src = 'https://via.placeholder.com/56'; }} />
+            <img src={logo} alt="Todo Mundiales"/>
           </div>
           <div className="brand">
             <h1>TODO MUNDIALES</h1>
