@@ -1,4 +1,23 @@
+import { useState } from "react";
+
 function Form() {
+  // Único estado que almacena todos los datos del formulario
+  const [formData, setFormData] = useState({
+    nombre: "",
+    email: "",
+    edad: "",
+    terminos: false,
+  });
+
+  // Manejador genérico: actualiza el campo correspondiente del estado
+  const handleChange = (e) => {
+    const { name, type, value, checked } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
   return (
     <section className="section" id="suscripcion">
       <div className="section-top">
@@ -12,24 +31,52 @@ function Form() {
         <form id="subscribeForm" noValidate>
           <div className="form-group">
             <label htmlFor="nombre">Nombre completo</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" />
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Ingresa tu nombre"
+              value={formData.nombre}
+              onChange={handleChange}
+            />
             <span className="error-msg" id="err-nombre">El nombre no puede estar vacío.</span>
           </div>
 
           <div className="form-group">
             <label htmlFor="email">Correo Electrónico</label>
-            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="ejemplo@correo.com"
+              value={formData.email}
+              onChange={handleChange}
+            />
             <span className="error-msg" id="err-email">Ingresa un formato de correo válido.</span>
           </div>
 
           <div className="form-group">
             <label htmlFor="edad">Edad</label>
-            <input type="number" id="edad" name="edad" min="18" placeholder="Debes tener al menos 18 años" />
+            <input
+              type="number"
+              id="edad"
+              name="edad"
+              min="18"
+              placeholder="Debes tener al menos 18 años"
+              value={formData.edad}
+              onChange={handleChange}
+            />
             <span className="error-msg" id="err-edad">Debes tener al menos 18 años de edad.</span>
           </div>
 
           <div className="form-group form-checkbox">
-            <input type="checkbox" id="terminos" name="terminos" />
+            <input
+              type="checkbox"
+              id="terminos"
+              name="terminos"
+              checked={formData.terminos}
+              onChange={handleChange}
+            />
             <label htmlFor="terminos">Acepto los términos y condiciones de uso</label>
           </div>
 

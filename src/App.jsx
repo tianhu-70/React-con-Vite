@@ -16,12 +16,8 @@ function App() {
 
   // Aplica o quita la clase 'dark-mode' del body cuando cambia el tema
   useEffect(() => {
-    if (theme === "dark") {
-      document.body.classList.add("dark-mode");
-    } else {
-      document.body.classList.remove("dark-mode");
-    }
-  }, [theme]);
+  document.body.classList.toggle("dark-mode", theme === "dark");
+}, [theme]);
 
   return (
     <>
